@@ -25,7 +25,7 @@ choco install k6
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/k6facil.git
+git clone https://github.com/shardqa/k6facil.git
 cd k6facil
 ```
 
@@ -39,9 +39,26 @@ npm install
 npm link
 ```
 
+## Estrutura do Projeto
+
+```
+k6facil/
+├── bin/
+├── src/
+│   ├── configs/
+│   ├── lib/
+│   ├── scripts/
+│   └── tests/
+│       ├── examples/     # Exemplos de testes para referência
+│       └── user-tests/   # Testes do usuário (ignorado pelo git)
+├── .gitignore
+├── package.json
+└── README.md
+```
+
 ## Uso
 
-1. Crie um arquivo JSON com sua configuração de teste. Exemplo (`teste.json`):
+1. Crie seu arquivo JSON de teste na pasta `src/tests/user-tests/`. Exemplo (`src/tests/user-tests/teste.json`):
 
 ```json
 {
@@ -67,10 +84,12 @@ npm link
 }
 ```
 
-2. Execute o teste:
+2. Execute o teste usando o caminho completo:
 ```bash
-k6facil teste.json
+k6facil src/tests/user-tests/teste.json
 ```
+
+**Nota**: A pasta `src/tests/user-tests/` está no `.gitignore` para evitar que tokens e credenciais sejam acidentalmente commitados.
 
 ## Configuração do JSON
 
