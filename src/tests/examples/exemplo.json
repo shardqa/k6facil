@@ -1,0 +1,20 @@
+{
+  "endpoint": {
+    "url": "http://test.k6.io",
+    "method": "GET",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  },
+  "loadTest": {
+    "startVUs": 1,
+    "maxVUs": 10,
+    "stages": [
+      { "duration": "10s", "target": 5 }
+    ],
+    "thresholds": {
+      "http_req_duration": ["p(95)<500"],
+      "http_req_failed": ["rate<0.01"]
+    }
+  }
+}

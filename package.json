@@ -1,0 +1,21 @@
+{
+  "name": "k6facil",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "bin": {
+    "k6facil": "./bin/k6facil.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "chalk": "^5.3.0",
+    "handlebars": "^4.7.8"
+  }
+}
